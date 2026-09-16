@@ -1,0 +1,290 @@
+---
+title: "biostats_tricks"
+output: html_document
+date: "2025-11-19"
+---
+
+## T-TEST
+
+Get T statistic (equal and unequal variance)
+
+```{r}
+# sample size
+n_1 <- 20
+n_2 <- 10
+# Sample Mean
+x_1 <- 96
+x_2 <- 103
+# Standard Deviation
+sd_1 <- 13.76494
+sd_2 <- 17.95055 
+
+# EQUAL VARIANCE - - - - - - - - - - - - - - - - - 
+# calculate the pooled variance
+sp <- (sd_1^2 * (n_1 - 1) + sd_2^2 * (n_2 - 1)) /
+    (n_1 + n_2 - 2)
+
+# Use pooled variance to calculate the t-statistic
+t_stat <- (x_1 - x_2) /
+    sqrt(sp * (1/n_1 + 1/n_2))
+
+# UNEQUAL VARIANCE - - - - - - - - - - - - - - - -
+# Calculate the t-statistic
+t_stat <- (x_1 - x_2) /
+    sqrt(sd_1/n_1 + sd_2/n_2)
+
+# Calculate the degrees of freedom (V)
+V <- (sd_1^2/n_1 + sd_2^2/n_2)^2 /
+    ((sd_1^2/n_1)^2 / (n_1 - 1) + (sd_2^2/n_2)^2 / (n_2 - 1))
+```
+
+Get p-value from t-statistic (this no workie)
+
+```{r}
+1-pt(-1.63, 355)
+
+```
+
+## ANOVA
+
+Get F statistic
+
+```{r}
+# Number of groups
+k <- 4
+
+# Group sample sizes
+n_1 <- 269
+n_2 <- 53
+n_3 <- 28
+n_4 <- 9
+
+
+# Group means
+x_1 <- 115
+x_2 <- 114
+x_3 <- 118
+x_4 <- 126
+
+
+# Group standard deviations
+s_1 <- 13.4
+s_2 <- 10.1
+s_3 <- 11.6
+s_4 <- 12.2
+
+
+# Grand mean is an average weighted by size of each sample
+X <- (n_1*x_1 
+      + n_2*x_2 
+      + n_3*x_3 
+      + n_4*x_4
+      ) /
+  (n_1 + n_2 + n_3 + n_4) 
+
+# Between-group variance
+s_b <- (n_1*(x_1 - X)^2 
+        + n_2*(x_2 - X)^2 
+        + n_3*(x_3 - X)^2 
+        + n_4*(x_4 - X)^2
+        ) /
+  (k - 1) # between-group degrees of freedom
+
+# Within-group variance
+s_w <- (s_1^2 * (n_1-1) 
+        + s_2^2 * (n_2-1) 
+        + s_3^2 * (n_3-1) 
+        + s_4^2 * (n_4-1)
+        ) /
+  (n_1 + n_2 + n_3 + n_4 - k) # within-group degrees of freedom
+  
+f_stat <- s_b / s_w
+
+```
+
+Get p-value from F statistic
+
+```{r}
+
+# quantile... thingy... Gives you the F statistic
+qf(1-.01, 3, 6)
+
+# Proportion of F density (lower tail, which is why it's subtracted from 1)
+1-pf(10.86601, 3, 1494)
+```
+
+Multiple Comparisons
+
+```{r}
+
+# Givens
+x_1 <- 118 # ex
+x_2 <- 114 # cur
+
+n_1 <- 28 # ex
+n_2 <- 53 # cur
+
+within_group_variance <- 164.0857
+
+t_stat <- (x_1 - x_2) /
+    sqrt(within_group_variance * (1/n_1 + 1/n_2))
+
+```
+
+# Non-Parametric Tests
+
+## One sample / paired
+
+Sign test
+
+```{r}
+n <- 1
+# Observed number of positive signs 
+D <- 1
+
+z_stat <- (D - n/2) /
+  sqrt(n/4)
+```
+
+Wilcoxon Signed-Rank
+
+```{r}
+# Smaller sum
+T_sum <- 1
+
+mu <- n*(n+1) / 4
+stand_dev <- sqrt((n*(n+1)*(2*n + 1)) / 24)
+
+z_stat <- (T_sum - mu) /
+  stand_dev
+```
+
+## 2 Independent Samples
+
+Wilcoxon Rank-Sum
+
+```{r}
+# Sample sizes
+n_s <- 1 # Smallest sum of ranks
+n_l <- 2 # Largest sum of ranks
+
+# Smaller sum
+W_sum <- 1
+
+mu <- (n_s*(n_s + n_l + 1)) / 2
+stand_dev <- sqrt((n_1*n_2*(n_s + n_l + 1)) / 12)
+  
+z_stat <- (W_sum - mu) /
+  stand_dev
+```
+
+# Chi-Square
+
+Get test statistic
+
+```{r}
+# Quantile thingy - use this to get the critical value.
+qchisq(1-.05, df=7)
+
+# We subtract it from 1 because it gives us the left side of the distribution
+1-pchisq(3.722, df=1)
+
+```
+
+
+
+# Probability Mass Function (PMF)
+
+Given sample size n, k groups, and an event probability of p, what is the probability that k successes will happen?
+
+```{r}
+k <- c(0, 1, 2, 3, 4) # k can be a single number or a vector
+n <- 40
+p <- .15
+
+n_choose_k <- factorial(n) /
+    (factorial(k) * factorial(n - k))
+
+probability <- n_choose_k * p^k * (1 - p)^(n - k)
+
+# Sum them all together if you used multiple ks.
+sum(probability)
+```
+
+# Wrangle a 2x2 table
+
+```{r}
+# Get a table that you can use for making Odds Ratios ready for input into stata
+two_by_two <- dat %>% 
+    group_by(
+        case = ifelse(organism_or_disease_identified == 'Rickettsia africae', 'a_rickettsia', 'b_not_rickettsia'),
+        exposure = ifelse(sex == 'Female', 'Female', 'Male')
+        ) %>% 
+    summarise(count = n())
+
+two_by_two$count
+
+# This also works
+table(x, y)
+```
+
+
+
+# Chi-squared test
+```{r}
+# Wrangle into a rxc table (more complicated way)
+# chi_table <- dat %>% 
+#     # Remove the nulls
+#     filter(!is.na(food_insecurity_didnt_last), !is.na(rejection)) %>% 
+#     # Get counts for each group
+#     group_by(food_insecurity_didnt_last, rejection) %>% 
+#     summarise(count = n()) %>% 
+#     # Pivot it into a rxc format 
+#     pivot_wider(names_from = food_insecurity_didnt_last, 
+#                 values_from = count) %>%
+#     # Make sure the row variable gets stored as column names rather than values (will mess up structure and datatype if not included)
+#     column_to_rownames('rejection') %>% 
+#     as.matrix()
+
+# The easiest way to do a chi-square test
+library(janitor)
+
+# Chi-square
+chisq.test(tabyl(dataframe, x, y))
+
+# Check expected counts
+chi_sqr$expected
+
+# If expected counts are less than 5, do a non-parametric version of the test with simulate p-value argument. 
+# Fisher's exact
+fisher.test(tabyl(dataframe, x, y), simulate.p.value = TRUE)
+
+```
+
+
+## Cronbach's Alpha
+This test can be used to see if two similar survey questions measure the same thing. This is useful when checking questions for internal consistency reliability.
+Note that this function seems to need the data to be numeric. Consider recoding ordinal variables to integers.
+Read more here: https://statisticsbyjim.com/basics/cronbachs-alpha/
+```{r}
+library(psych)
+
+# Make a dataframe for only the columns that are supposed to be measuring the same thing
+trees <- Orange %>% 
+    select(age, circumference)
+
+alpha(trees)
+
+
+```
+
+## Check assumptions for all kinds of models
+```{r}
+library(easystats)
+
+mylm <- lm(mpg ~ wt + hp + disp, mtcars)
+
+check_model(mylm)
+
+```
+

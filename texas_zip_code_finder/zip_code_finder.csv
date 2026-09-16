@@ -1,0 +1,233 @@
+,zip_code,city,county
+1,79012,Bushland,Potter
+2,79101,Amarillo,Potter
+3,79102,Amarillo,Potter
+4,79103,Amarillo,Potter
+5,79104,Amarillo,Potter
+6,79105,Amarillo,Potter
+7,79106,Amarillo,Potter
+8,79107,Amarillo,Potter
+9,79108,Amarillo,Potter
+10,79111,Amarillo,Potter
+11,79116,Amarillo,Potter
+12,79117,Amarillo,Potter
+13,79120,Amarillo,Potter
+14,79123,Amarillo,Potter
+15,79124,Amarillo,Potter
+16,79159,Amarillo,Potter
+17,79189,Amarillo,Potter
+18,79015,Canyon,Randall
+19,79091,Umbarger,Randall
+20,79109,Amarillo,Randall
+21,79110,Amarillo,Randall
+22,79114,Amarillo,Randall
+23,79118,Amarillo,Randall
+24,79119,Amarillo,Randall
+25,79121,Amarillo,Randall
+26,78501,McAllen,Hidalgo
+27,78502,McAllen,Hidalgo
+28,78503,McAllen,Hidalgo
+29,78504,McAllen,Hidalgo
+30,78505,McAllen,Hidalgo
+31,78516,Alamo,Hidalgo
+32,78537,Donna,Hidalgo
+33,78538,Monte Alto,Hidalgo
+34,78538,Edcouch,Hidalgo
+35,78539,Edinburg,Hidalgo
+36,78540,Edinburg,Hidalgo
+37,78541,Edinburg,Hidalgo
+38,78542,Edinburg,Hidalgo
+39,78543,Elsa,Hidalgo
+40,78549,Hargill,Hidalgo
+41,78557,Hidalgo,Hidalgo
+42,78558,La Blanca,Hidalgo
+43,78560,La Joya,Hidalgo
+44,78562,La Villa,Hidalgo
+45,78563,Linn,Hidalgo
+46,78565,Los Ebanos,Hidalgo
+47,78570,Mercedes,Hidalgo
+48,78572,Alton,Hidalgo
+49,78572,Mission,Hidalgo
+50,78573,Mission,Hidalgo
+51,78574,Mission,Hidalgo
+52,78576,Penitas,Hidalgo
+53,78577,Pharr,Hidalgo
+54,78579,Progreso,Hidalgo
+55,78589,San Juan,Hidalgo
+56,78595,Sullivan City,Hidalgo
+57,78596,Progreso Lakes,Hidalgo
+58,78596,Weslaco,Hidalgo
+59,78599,Weslaco,Hidalgo
+60,75201,Dallas,Dallas
+61,75202,Dallas,Dallas
+62,75203,Dallas,Dallas
+63,75204,Dallas,Dallas
+64,75205,Dallas,Dallas
+65,75206,Dallas,Dallas
+66,75207,Dallas,Dallas
+67,75208,Dallas,Dallas
+68,75209,Dallas,Dallas
+69,75210,Dallas,Dallas
+70,75211,Dallas,Dallas
+71,75212,Dallas,Dallas
+72,75214,Dallas,Dallas
+73,75215,Dallas,Dallas
+74,75216,Dallas,Dallas
+75,75217,Dallas,Dallas
+76,75218,Dallas,Dallas
+77,75219,Dallas,Dallas
+78,75220,Dallas,Dallas
+79,75221,Dallas,Dallas
+80,75222,Dallas,Dallas
+81,75223,Dallas,Dallas
+82,75224,Dallas,Dallas
+83,75225,Dallas,Dallas
+84,75226,Dallas,Dallas
+85,75227,Dallas,Dallas
+86,75228,Dallas,Dallas
+87,75229,Dallas,Dallas
+88,75230,Dallas,Dallas
+89,75231,Dallas,Dallas
+90,75232,Dallas,Dallas
+91,75233,Dallas,Dallas
+92,75234,Dallas,Dallas
+93,75235,Dallas,Dallas
+94,75236,Dallas,Dallas
+95,75237,Dallas,Dallas
+96,75238,Dallas,Dallas
+97,75239,Dallas,Dallas
+98,75240,Dallas,Dallas
+99,75241,Dallas,Dallas
+100,75242,Dallas,Dallas
+101,75243,Dallas,Dallas
+102,75244,Dallas,Dallas
+103,75245,Dallas,Dallas
+104,75246,Dallas,Dallas
+105,75247,Dallas,Dallas
+106,75248,Dallas,Dallas
+107,75249,Dallas,Dallas
+108,75250,Dallas,Dallas
+109,75251,Dallas,Dallas
+110,75252,Dallas,Collin
+111,75253,Dallas,Dallas
+112,75254,Dallas,Dallas
+113,75258,Dallas,Dallas
+114,75260,Dallas,Dallas
+115,75261,Dallas,Dallas
+116,75262,Dallas,Dallas
+117,75263,Dallas,Dallas
+118,75264,Dallas,Dallas
+119,75265,Dallas,Dallas
+120,75266,Dallas,Dallas
+121,75267,Dallas,Dallas
+122,75270,Dallas,Dallas
+123,75287,Dallas,Collin
+124,75295,Dallas,Dallas
+125,75313,Dallas,Dallas
+126,75315,Dallas,Dallas
+127,75336,Dallas,Dallas
+128,75339,Dallas,Dallas
+129,75342,Dallas,Dallas
+130,75354,Dallas,Dallas
+131,75355,Dallas,Dallas
+132,75356,Dallas,Dallas
+133,75357,Dallas,Dallas
+134,75359,Dallas,Dallas
+135,75360,Dallas,Dallas
+136,75367,Dallas,Dallas
+137,75370,Dallas,Dallas
+138,75371,Dallas,Dallas
+139,75372,Dallas,Dallas
+140,75374,Dallas,Dallas
+141,75376,Dallas,Dallas
+142,75378,Dallas,Dallas
+143,75379,Dallas,Dallas
+144,75380,Dallas,Dallas
+145,75381,Dallas,Dallas
+146,75382,Dallas,Dallas
+147,75398,Dallas,Dallas
+148,78201,San Antonio,Bexar
+149,78202,San Antonio,Bexar
+150,78203,San Antonio,Bexar
+151,78204,San Antonio,Bexar
+152,78205,San Antonio,Bexar
+153,78206,San Antonio,Bexar
+154,78207,San Antonio,Bexar
+155,78208,San Antonio,Bexar
+156,78209,San Antonio,Bexar
+157,78210,San Antonio,Bexar
+158,78211,San Antonio,Bexar
+159,78212,San Antonio,Bexar
+160,78213,San Antonio,Bexar
+161,78214,San Antonio,Bexar
+162,78215,San Antonio,Bexar
+163,78216,San Antonio,Bexar
+164,78217,San Antonio,Bexar
+165,78218,San Antonio,Bexar
+166,78219,San Antonio,Bexar
+167,78220,San Antonio,Bexar
+168,78221,San Antonio,Bexar
+169,78222,San Antonio,Bexar
+170,78223,San Antonio,Bexar
+171,78224,San Antonio,Bexar
+172,78225,San Antonio,Bexar
+173,78226,San Antonio,Bexar
+174,78227,San Antonio,Bexar
+175,78228,San Antonio,Bexar
+176,78229,San Antonio,Bexar
+177,78230,San Antonio,Bexar
+178,78231,San Antonio,Bexar
+179,78232,San Antonio,Bexar
+180,78233,San Antonio,Bexar
+181,78234,San Antonio,Bexar
+182,78235,San Antonio,Bexar
+183,78236,San Antonio,Bexar
+184,78237,San Antonio,Bexar
+185,78238,San Antonio,Bexar
+186,78239,San Antonio,Bexar
+187,78240,San Antonio,Bexar
+188,78241,San Antonio,Bexar
+189,78242,San Antonio,Bexar
+190,78243,San Antonio,Bexar
+191,78244,San Antonio,Bexar
+192,78245,San Antonio,Bexar
+193,78246,San Antonio,Bexar
+194,78247,San Antonio,Bexar
+195,78248,San Antonio,Bexar
+196,78249,San Antonio,Bexar
+197,78250,San Antonio,Bexar
+198,78251,San Antonio,Bexar
+199,78252,San Antonio,Bexar
+200,78253,San Antonio,Bexar
+201,78254,San Antonio,Bexar
+202,78255,San Antonio,Bexar
+203,78256,San Antonio,Bexar
+204,78257,San Antonio,Bexar
+205,78258,San Antonio,Bexar
+206,78259,San Antonio,Bexar
+207,78260,San Antonio,Bexar
+208,78261,San Antonio,Bexar
+209,78262,San Antonio,Bexar
+210,78263,San Antonio,Bexar
+211,78264,San Antonio,Bexar
+212,78265,San Antonio,Bexar
+213,78266,San Antonio,Comal
+214,78268,San Antonio,Bexar
+215,78269,San Antonio,Bexar
+216,78270,San Antonio,Bexar
+217,78278,San Antonio,Bexar
+218,78279,San Antonio,Bexar
+219,78280,San Antonio,Bexar
+220,78283,San Antonio,Bexar
+221,78284,San Antonio,Bexar
+222,78285,San Antonio,Bexar
+223,78291,San Antonio,Bexar
+224,78292,San Antonio,Bexar
+225,78293,San Antonio,Bexar
+226,78294,San Antonio,Bexar
+227,78295,San Antonio,Bexar
+228,78296,San Antonio,Bexar
+229,78297,San Antonio,Bexar
+230,78298,San Antonio,Bexar
+231,78299,San Antonio,Bexar
+232,74107,Tulsa,Tulsa
